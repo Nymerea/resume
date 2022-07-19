@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Right Resume</title>
+    <link crossorigin="crossorigin" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link as="style"
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap"
+          rel="preload"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap"
+          media="print"
+          onload="this.media='all'" rel="stylesheet"/>
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap"
+              rel="stylesheet"/>
+    </noscript>
+    <link data-th-href="@{/templateResume1/css/font-awesome/css/all.min.css?ver=1.2.0}"
+          href="css/font-awesome/css/all.min.css?ver=1.2.0" rel="stylesheet">
+    <link data-th-href="@{/templateResume1/css/bootstrap.min.css?ver=1.2.0}" href="css/bootstrap.min.css?ver=1.2.0"
+          rel="stylesheet">
+    <link data-th-href="@{/templateResume1/css/aos.css?ver=1.2.0}" href="css/aos.css?ver=1.2.0" rel="stylesheet">
+    <link data-th-href="@{/templateResume1/css/main.css?ver=1.2.0}" href="css/main.css?ver=1.2.0" rel="stylesheet">
+    <noscript>
+        <style type="text/css">
+        [data-aos] {
+            opacity: 1 !important;
+            transform: translate(0) scale(1) !important;
+        }
+
+        </style>
+    </noscript>
+</head>
+<body id="top">
+<header class="d-print-none">
+    <div class="container text-center text-lg-left">
+        <div class="py-3 clearfix">
+            <h1 class="site-title mb-0">Joyce Harrison</h1>
+            <div class="site-nav">
+                <nav role="navigation">
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item"><a class="nav-link" href="https://twitter.com/templateflip"
+                                                title="Twitter"><i class="fab fa-twitter"></i><span
+                                class="menu-title sr-only">Twitter</span></a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/templateflip"
+                                                title="Facebook"><i class="fab fa-facebook"></i><span
+                                class="menu-title sr-only">Facebook</span></a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/templateflip"
+                                                title="Instagram"><i class="fab fa-instagram"></i><span
+                                class="menu-title sr-only">Instagram</span></a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/templateflip"
+                                                title="Github"><i class="fab fa-github"></i><span
+                                class="menu-title sr-only">Github</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="page-content">
+    <div class="container">
+        <div class="cover shadow-lg bg-white">
+            <div class="cover-bg p-3 p-lg-4 text-white">
+                <div class="row">
+                    <div class="col-lg-4 col-md-5">
+
+                        <div th:if="${jsonResume.basics.image != ''}" class="avatar hover-effect bg-white shadow-sm p-1"><img height="200"
+                                                                                     src="images/avatar.jpg"
+                                                                                     th:src="@{'data:image/jpeg;base64,'+${jsonResume.basics.image}}"
+                                                                                     width="200"/>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-7 text-center text-md-start">
+                        <h2 class="h1 mt-2" data-aos="fade-left" data-th-text="${ jsonResume.basics.name }">Joyce
+                            Harrison</h2>
+                        <p data-aos="fade-left" data-th-text="${ jsonResume.basics.label }">Graphic Designer & Web
+                            Developer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-section pt-4 px-3 px-lg-4 mt-1">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 class="h3 mb-3">About Me</h2>
+                        <p data-th-text="${ jsonResume.basics.summary }">Hello! I’m Joyce Harrison. I am passionate
+                            about UI/UX design and Web Design. I am a skilled
+                            Front-end Developer and master of Graphic Design tools such as Photoshop and Sketch.</p>
+                    </div>
+                    <div class="col-md-5 offset-md-1">
+                        <div class="row mt-2">
+                            <div class="col-sm-4">
+                                <div class="pb-1">Age</div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="pb-1 text-secondary" data-th-text="${ jsonResume.basics.age }">28</div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="pb-1">Email</div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="pb-1 text-secondary" data-th-text="${ jsonResume.basics.email }">
+                                    Joyce@company.com
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="pb-1">Phone</div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="pb-1 text-secondary" data-th-text="${ jsonResume.basics.phone }">
+                                    +0718-111-0011
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="pb-1">Address</div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="pb-1 text-secondary">140, City Center, New York, U.S.A</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="d-print-none"/>
+            <div class="skills-section px-3 px-lg-4">
+                <h2 class="h3 mb-3">Professional Skills</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-2"><span>HTML</span>
+                            <div class="progress my-1">
+                                <div class="progress-bar bg-primary" data-aos-anchor=".skills-section"
+                                     role="progressbar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-2"><span>CSS</span>
+                            <div class="progress my-1">
+                                <div aria-valuemax="100" aria-valuemin="0"
+                                     aria-valuenow="85" class="progress-bar bg-primary"
+                                     data-aos-anchor=".skills-section" role="progressbar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-2"><span>JavaScript</span>
+                            <div class="progress my-1">
+                                <div aria-valuemax="100" aria-valuemin="0"
+                                     aria-valuenow="75" class="progress-bar bg-primary"
+                                     data-aos-anchor=".skills-section" role="progressbar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-2"><span>Adobe Photoshop</span>
+                            <div class="progress my-1">
+                                <div aria-valuemax="100" aria-valuemin="0"
+                                     aria-valuenow="90" class="progress-bar bg-success"
+                                     data-aos-anchor=".skills-section" role="progressbar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-2"><span>Sketch</span>
+                            <div class="progress my-1">
+                                <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="85"
+                                     class="progress-bar bg-success" data-aos="zoom-in-right"
+                                     data-aos-anchor=".skills-section" role="progressbar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-2"><span>Adobe XD</span>
+                            <div class="progress my-1">
+                                <div aria-valuemax="100" aria-valuemin="0"
+                                     aria-valuenow="75" class="progress-bar bg-success"
+                                     data-aos-anchor=".skills-section" role="progressbar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="d-print-none"/>
+            <div class="work-experience-section px-3 px-lg-4">
+                <h2 class="h3 mb-4">Work Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-card timeline-card-primary card shadow-sm"
+                         data-th-each="work : ${ jsonResume.work }">
+                        <div class="card-body">
+                            <div class="h5 mb-1" data-th-text="${ work.position}">Frontend Developer <span
+                                    class="text-muted h6" data-th-text="${ work.name}">at Creative Agency</span></div>
+                            <div class="text-muted text-small mb-2"
+                                 data-th-text="${@dateUtils.dateRange(jsonResume.locale, work.startDate, work.endDate)}">
+                                May, 2015 - Present
+                            </div>
+                            <div data-th-text="${ work.summary }">Leverage agile frameworks to provide a robust synopsis
+                                for high level overviews.
+                                Iterative approaches to corporate strategy foster collaborative thinking to further the
+                                overall value proposition.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="d-print-none"/>
+            <div class="page-break"></div>
+            <div class="education-section px-3 px-lg-4 pb-4">
+                <h2 class="h3 mb-4">Education</h2>
+                <div class="timeline">
+                    <div class="timeline-card timeline-card-success card shadow-sm"
+                         data-th-each="education : ${ jsonResume.education }">
+                        <div class="card-body">
+                            <div class="h5 mb-1"> <span data-th-text="${ education.studyType +' '+ education.area}">Masters in
+                                Information Technology</span> <span class="text-muted h6"
+                                                                    data-th-text="${ 'from '+ education.institution }">from International University</span>
+                            </div>
+                            <div class="text-muted text-small mb-2"
+                                 data-th-text="${@dateUtils.yearRange(education.startDate, education.endDate)}">2011 -
+                                2013
+                            </div>
+                            <div data-th-text="${ education.summary }">Leverage agile frameworks to provide a robust
+                                synopsis for high level overviews.
+                                Iterative approaches to corporate strategy foster collaborative thinking to further the
+                                overall value proposition.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script data-th-src="@{/templateResume1/scripts/bootstrap.bundle.min.js?ver=1.2.0}"
+        src="scripts/bootstrap.bundle.min.js?ver=1.2.0"></script>
+<script data-th-src="@{/templateResume1/scripts/aos.js?ver=1.2.0}" src="scripts/aos.js?ver=1.2.0"></script>
+<script data-th-src="@{/templateResume1/scripts/main.js?ver=1.2.0}" src="scripts/main.js?ver=1.2.0"></script>
+</body>
+</html>
