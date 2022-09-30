@@ -27,6 +27,7 @@ public class ResumeService {
     public Optional<JsonResumeDto> findById(Long id) {
         return resumeRepo.findById(id).map(mapper::resumeToDto);
     }
+
     @Transactional(readOnly = true)
     public Optional<Resume> findEntityById(Long id) {
         return resumeRepo.findById(id);

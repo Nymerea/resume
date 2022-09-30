@@ -3,7 +3,6 @@ package org.qualihub.resume.domain.adapter.linkedin;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
 import java.io.IOException;
 
 class LinkedinEmailExtractorTest {

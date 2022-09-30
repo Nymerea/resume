@@ -85,23 +85,24 @@ class LinkedinPdfAdapterTest {
 
         assertThat(workJsonResumeDtos)
                 .extracting(WorkJsonResumeDto::getStartDate)
-                .containsExactlyInAnyOrder(LocalDate.of(2022,1,1),
-                        LocalDate.of(2022,1,1),
-                        LocalDate.of(2018,8,1),
-                        LocalDate.of(2016,10,1),
-                        LocalDate.of(2015,9,1),
-                        LocalDate.of(2015,6,1),
-                        LocalDate.of(2014,6,1),
-                        LocalDate.of(2012,4,1));
+                .containsExactlyInAnyOrder(LocalDate.of(2022, 1, 1),
+                        LocalDate.of(2022, 1, 1),
+                        LocalDate.of(2018, 8, 1),
+                        LocalDate.of(2016, 10, 1),
+                        LocalDate.of(2015, 9, 1),
+                        LocalDate.of(2015, 6, 1),
+                        LocalDate.of(2014, 6, 1),
+                        LocalDate.of(2012, 4, 1));
         assertThat(workJsonResumeDtos)
                 .extracting(WorkJsonResumeDto::getEndDate)
-                .containsExactlyInAnyOrder(LocalDate.of(2022,1,1),
-                        LocalDate.of(2022,1,1),
-                        LocalDate.of(2022,1,1),
-                        LocalDate.of(2018,8,1),
-                        LocalDate.of(2016,9,1),
-                        LocalDate.of(2014,8,1),
-                        LocalDate.of(2013,3,1));
+                .containsExactlyInAnyOrder(null,
+                        null,
+                        LocalDate.of(2022, 1, 1),
+                        LocalDate.of(2018, 8, 1),
+                        LocalDate.of(2016, 9, 1),
+                        LocalDate.of(2015, 9, 1),
+                        LocalDate.of(2014, 8, 1),
+                        LocalDate.of(2013, 3, 1));
 
         var educations = jsonResumeDto.getEducation();
         assertThat(educations).isNotEmpty();
@@ -115,14 +116,14 @@ class LinkedinPdfAdapterTest {
 
         assertThat(educations)
                 .extracting(EducationJsonResumeDto::getStartDate)
-                .containsExactlyInAnyOrder(LocalDate.of(2014,01,01),
-                        LocalDate.of(2013,01,01),
-                        LocalDate.of(2011,01,01));
+                .containsExactlyInAnyOrder(LocalDate.of(2014, 01, 01),
+                        LocalDate.of(2013, 01, 01),
+                        LocalDate.of(2011, 01, 01));
         assertThat(educations)
                 .extracting(EducationJsonResumeDto::getEndDate)
-                .containsExactlyInAnyOrder(LocalDate.of(2015,01,01),
-                        LocalDate.of(2014,01,01),
-                        LocalDate.of(2013,01,01));
+                .containsExactlyInAnyOrder(LocalDate.of(2015, 01, 01),
+                        LocalDate.of(2014, 01, 01),
+                        LocalDate.of(2013, 01, 01));
 
     }
 }

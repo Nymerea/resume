@@ -15,12 +15,13 @@ class LinkedinExperienceExtractorTest {
     @Test
     void extract_time_range() {
         WorkJsonResumeDto actual = new WorkJsonResumeDto();
-        instance.fillTimeRange(List.of("août 2018 - janvier 2022 (3 ans 6 mois)"),0, actual);
+        instance.fillTimeRange(List.of("août 2018 - janvier 2022 (3 ans 6 mois)"), 0, actual);
 
         assertThat(actual)
-                .returns(LocalDate.of(2018,8,1), WorkJsonResumeDto::getStartDate)
-                .returns(LocalDate.of(2022,1,1), WorkJsonResumeDto::getEndDate);
+                .returns(LocalDate.of(2018, 8, 1), WorkJsonResumeDto::getStartDate)
+                .returns(LocalDate.of(2022, 1, 1), WorkJsonResumeDto::getEndDate);
     }
+
     @Test
     void can_extract_experiences() {
         String content =
