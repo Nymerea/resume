@@ -12,7 +12,6 @@ class LinkedinEmailExtractorTest {
 
     @Test
     void import_french_resume() throws IOException {
-        File file = new File("/home/morgan/git/resume/src/test/resources/Profile.pdf");
         String email = instance.findEmail("Coordonnées\n" +
                 "morgan-durand@laposte.net\n" +
                 "www.linkedin.com/in/morgan-\n" +

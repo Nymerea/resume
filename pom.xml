@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.0</version>
+        <version>2.7.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.qualihub</groupId>
@@ -14,8 +14,8 @@
     <name>open resume</name>
     <description>open resume builder</description>
     <properties>
-        <java.version>11</java.version>
-        <org.mapstruct.version>1.5.1.Final</org.mapstruct.version>
+        <java.version>17</java.version>
+        <org.mapstruct.version>1.5.2.Final</org.mapstruct.version>
     </properties>
     <dependencies>
         <dependency>

@@ -73,11 +73,11 @@ class LinkedinExperienceExtractor {
         }
     }
 
-    private void fillTimeRange(List<String> lines, Integer timeRangePosition, WorkJsonResumeDto work) {
+     void fillTimeRange(List<String> lines, Integer timeRangePosition, WorkJsonResumeDto work) {
         // third line is time range
         String timeRangeStr = lines.get(timeRangePosition);
-        String startDateStr = StringUtils.substringBeforeLast(timeRangeStr, " -") + " 01";
-        String endDateStr = StringUtils.substringBetween(timeRangeStr, "- ", "(") + " 01";
+        String startDateStr = StringUtils.substringBeforeLast(timeRangeStr, " -").trim() + " 01";
+        String endDateStr = StringUtils.substringBetween(timeRangeStr, "- ", "(").trim() + " 01";
 
         for (Locale locale : Locale.getAvailableLocales()) {
             try {
@@ -107,10 +107,14 @@ class LinkedinExperienceExtractor {
 
     private void extractDates(WorkJsonResumeDto work, String startDateStr, String endDateStr, DateTimeFormatter dateFormatter) {
         LocalDate startDate = LocalDate.parse(startDateStr, dateFormatter);
-        work.setStartDate(startDate);
+        if(work.getStartDate() == null && startDate != null) {
+            work.setStartDate(startDate);
+        }
         if (!"present".equalsIgnoreCase(endDateStr) && StringUtils.isNotEmpty(endDateStr)) {
-            LocalDate endDate = LocalDate.parse(startDateStr, dateFormatter);
-            work.setEndDate(endDate);
+            LocalDate endDate = LocalDate.parse(endDateStr, dateFormatter);
+            if(work.getEndDate() == null && endDate != null) {
+                work.setEndDate(endDate);
+            }
         }
     }
 

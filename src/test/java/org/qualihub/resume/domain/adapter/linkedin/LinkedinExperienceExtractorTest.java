@@ -3,6 +3,7 @@ package org.qualihub.resume.domain.adapter.linkedin;
 import org.junit.jupiter.api.Test;
 import org.qualihub.resume.domain.dto.jsonresume.WorkJsonResumeDto;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -10,6 +11,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 class LinkedinExperienceExtractorTest {
     LinkedinExperienceExtractor instance = new LinkedinExperienceExtractor();
 
+
+    @Test
+    void extract_time_range() {
+        WorkJsonResumeDto actual = new WorkJsonResumeDto();
+        instance.fillTimeRange(List.of("août 2018 - janvier 2022 (3 ans 6 mois)"),0, actual);
+
+        assertThat(actual)
+                .returns(LocalDate.of(2018,8,1), WorkJsonResumeDto::getStartDate)
+                .returns(LocalDate.of(2022,1,1), WorkJsonResumeDto::getEndDate);
+    }
     @Test
     void can_extract_experiences() {
         String content =
